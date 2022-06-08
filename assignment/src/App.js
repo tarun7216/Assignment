@@ -2,6 +2,7 @@
 import './App.css';
 
 import Firstpage from './components/project/Firstpage';
+import Secondpage from './components/project/Secondpage';
 
 
 const App =() => {
@@ -10,6 +11,7 @@ const App =() => {
       <h3 style={{color:"red"}}>Employee Selection App</h3>
     
       <Firstpage />
+      
     </div>
   );
 }
