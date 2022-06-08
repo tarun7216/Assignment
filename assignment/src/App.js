@@ -1,15 +1,15 @@
 
 import './App.css';
-import Search from './components/page1/Search';
-import TableForm from './components/page2/TableForm';
+
+import Firstpage from './components/project/Firstpage';
 
 
 const App =() => {
   return (
     <div className='App'>
       <h3 style={{color:"red"}}>Employee Selection App</h3>
-      <Search />
-      {/* <TableForm /> */}
+    
+      <Firstpage />
     </div>
   );
 }

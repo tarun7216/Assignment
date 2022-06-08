@@ -11,6 +11,7 @@ const TableForm = (item) => {
            <th>Gender</th>
            <th>Email</th>
            <th>Address</th>
+           <th>Login details</th>
            
          </thead>
          

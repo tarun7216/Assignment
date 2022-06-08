@@ -61,16 +61,37 @@ import { useEffect, useState } from "react";
 import React from "react";
 import './Search.css'
 
-const App = () => {
+const Search = () => {
   const [data, setData] = useState([]);
+  const[query, setQuery] = useState([])
+  const searchListByQuery = () => {
+      if(query) {
+        //   Emptying the list the search will happen.
+          setData([])
+          setListDataFromAPi ( setApiData,query)
+      }
+      else{
+          return (
+              <h4>Not Found</h4>
+          )
+      }
+  }
+  const searchHandler = (e)=> {
+      setQuery(e.target.value)
+  }
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((json) => setData(json));
   }, []);
+
+ 
   return (
-    <div className="grid-container">
+    <div>
+        <div>
+            <h3>Search: <input type="search" placeholder="Search" value={query} onChange={searchHandler}  /></h3>
+        </div>
       {data.map((item) => (
         <table className="Table">
           <thead>
@@ -89,4 +110,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default {Search, setListDataFromAPi };
